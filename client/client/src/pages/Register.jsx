@@ -112,7 +112,7 @@
 // export default Register;
 
 import { useState } from "react";
-// import axios from "axios";
+import axios from "axios";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../services/api";
@@ -152,13 +152,22 @@ const Register = () => {
       //     password,
       //   }
       // );
-      const response = await api.post(
-        "/auth/register", 
-        {
+      // const response = await api.post(
+      //   "/auth/register", 
+      //   {
+      //     name,
+      //     email,
+      //     password,
+      //   }
+      // );
+
+      const response = await axios.post(
+      "https://customer-support-crm-application.onrender.com/api/auth/register",
+      {
           name,
           email,
-          password,
-        }
+          password
+      }
       );
 
       toast.success(
