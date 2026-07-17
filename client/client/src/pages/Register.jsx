@@ -112,9 +112,10 @@
 // export default Register;
 
 import { useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
+import api from "../services/api";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -143,8 +144,16 @@ const Register = () => {
     }
 
     try {
-      const response = await axios.post(
-        "http://localhost:5000/api/auth/register",
+      // const response = await axios.post(
+      //   "http://localhost:5000/api/auth/register",
+      //   {
+      //     name,
+      //     email,
+      //     password,
+      //   }
+      // );
+      const response = await api.post(
+        "/auth/register", 
         {
           name,
           email,
