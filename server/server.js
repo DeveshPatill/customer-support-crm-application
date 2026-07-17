@@ -11,6 +11,8 @@ const ticketRoutes = require("./routes/ticketRoutes");
 const app = express();
 
 
+
+
 // ================= MIDDLEWARE =================
 app.use(cors());
 
@@ -41,6 +43,12 @@ app.get("/", (req, res) => {
     res.send("Server is running");
 });
 
+//debugging
+app.get("/debug", (req,res)=>{
+    res.json({
+        message:"Render is using latest code"
+    });
+});
 
 // ================= SERVER =================
 const PORT = process.env.PORT || 5000;
