@@ -9,6 +9,12 @@ const {
     deleteTicket
 } = require("../controllers/ticketController");
 
+router.get("/test", (req, res) => {
+    res.json({
+        message: "Ticket route working"
+    });
+});
+
 router.post("/", createTicket);
 router.get("/", getTickets);
 router.get("/:ticketId", getTicket);
